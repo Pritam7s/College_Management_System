@@ -1,21 +1,23 @@
 package edu.cms.exception;
 
-import java.util.Date;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+	import java.util.Date;
 
-@Setter
-@Getter
-@AllArgsConstructor
-@NoArgsConstructor
-public class ErrorDetails {
+	import lombok.AllArgsConstructor;
+	import lombok.Getter;
+	import lombok.NoArgsConstructor;
+	import lombok.Setter;
 
-	private Date timestamp;
-	private String message;
-	private String details;
-	
-	
-}
+	@Setter
+	@Getter
+	@AllArgsConstructor
+	@NoArgsConstructor
+	public class ErrorDetails {
+
+		private Date timestamp;
+		private String message;
+		private String details;
+		
+		
+	}
+

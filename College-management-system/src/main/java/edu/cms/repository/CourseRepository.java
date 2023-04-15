@@ -1,10 +1,12 @@
 package edu.cms.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 
-import edu.cms.entity.Course;
+	import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CourseRepository extends JpaRepository<Course, Integer>{
+	import edu.cms.entity.Course;
 
-	Course findBySubName(String subName);
-}
+	public interface CourseRepository extends JpaRepository<Course, Integer>{
+
+	}
+
+

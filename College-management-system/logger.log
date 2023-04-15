@@ -1,0 +1,43 @@
+29 Mar 2023 - 13:28:15.401 [main] INFO  e.c.CollegeManagementSystemApplication - Starting CollegeManagementSystemApplication using Java 17.0.6 on DESKTOP-4HGJ27E with PID 10452 (C:\Users\SABDICK\College-management-system\target\classes started by SABDICK in C:\Users\SABDICK\College-management-system)
+29 Mar 2023 - 13:28:15.425 [main] INFO  e.c.CollegeManagementSystemApplication - No active profile set, falling back to 1 default profile: "default"
+29 Mar 2023 - 13:28:20.150 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+29 Mar 2023 - 13:28:20.477 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 268 ms. Found 3 JPA repository interfaces.
+29 Mar 2023 - 13:28:22.854 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+29 Mar 2023 - 13:28:22.897 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+29 Mar 2023 - 13:28:22.898 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.73]
+29 Mar 2023 - 13:28:23.277 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+29 Mar 2023 - 13:28:23.278 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 7155 ms
+29 Mar 2023 - 13:28:24.063 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+29 Mar 2023 - 13:28:24.382 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.15.Final
+29 Mar 2023 - 13:28:25.102 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+29 Mar 2023 - 13:28:25.571 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+29 Mar 2023 - 13:28:31.115 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+29 Mar 2023 - 13:28:31.287 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+29 Mar 2023 - 13:28:39.862 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+29 Mar 2023 - 13:28:39.913 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+29 Mar 2023 - 13:28:41.404 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'edu.cms.service.UserService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+29 Mar 2023 - 13:28:41.408 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+29 Mar 2023 - 13:28:41.414 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+29 Mar 2023 - 13:28:41.521 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+29 Mar 2023 - 13:28:41.528 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+29 Mar 2023 - 13:28:41.575 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+29 Mar 2023 - 13:28:41.749 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field userService in edu.cms.controller.UserController required a bean of type 'edu.cms.service.UserService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'edu.cms.service.UserService' in your configuration.
+

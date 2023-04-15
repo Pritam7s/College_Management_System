@@ -1,8 +1,13 @@
 package edu.cms.serviceimpl;
 
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,9 +18,16 @@ import edu.cms.model.TeacherDTO;
 import edu.cms.repository.TeacherRepository;
 import edu.cms.service.TeacherService;
 import edu.cms.util.TeacherConverter;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
+@Slf4j
+
+
 public class TeacherServiceImpl implements TeacherService{
+	
+	//logger statically created
+	private static final Logger log= LoggerFactory.getLogger(Teacher.class);
 
 	@Autowired
 	private TeacherRepository teacherRepository;
@@ -23,6 +35,7 @@ public class TeacherServiceImpl implements TeacherService{
 	@Autowired
 	private TeacherConverter converter;
 	
+	//To save the teacher details 
 	@Override
 	public String createTeacher(Teacher teacher) {
 		String msg=null;
@@ -31,13 +44,15 @@ public class TeacherServiceImpl implements TeacherService{
 		teacher.setPassword(teacher.getPassword());
 		
 		teacherRepository.save(teacher);
+		log.info("Teacher "+teacher.toString()+" added at "+ new Date());
 		if(teacher!=null)
 		{
 			msg = "Teacher details saved successfully!";
 		}
 		return msg;
 	}
-
+	
+    // To show the teacher details by id
 	@Override
 	public TeacherDTO getTeacherById(int id) {
 		
@@ -45,7 +60,8 @@ public class TeacherServiceImpl implements TeacherService{
 		new ResourceNotFoundException("Teacher", "Id", id));
 		return converter.convertTeacherEntityToDTO(teacher);
 	}
-
+	
+    // To show all teacher details 
 	@Override
 	public List<TeacherDTO> getAllTeacherDetails() {
 		List<Teacher> teachers =teacherRepository.findAll();
@@ -56,7 +72,8 @@ public class TeacherServiceImpl implements TeacherService{
 		}
 		return teachDTO;
 	}
-
+	
+    //To update the teacher details 
 	@Override
 	public TeacherDTO updateTeacherDetails(int id, Teacher teacher) {
 		
@@ -75,7 +92,8 @@ public class TeacherServiceImpl implements TeacherService{
 		
 		return converter.convertTeacherEntityToDTO(existingT);
 	}
-
+	
+   // To delete the teacher details by id 
 	@Override
 	public String deleteTeacherById(int id) {
 		String msg = null;
@@ -92,20 +110,23 @@ public class TeacherServiceImpl implements TeacherService{
 		
 		return msg;
 	}
-
+	
+	//To delete all the teacher details 
 	@Override
 	public void deleteAllTeacherDetails() {
 		teacherRepository.deleteAll();
 		
 	}
-
+	
+    //To show teacher details  by using email
 	@Override
 	public TeacherDTO findTeacherByEmail(String email) {
 		Teacher temail = teacherRepository.findByEmail(email);
 		
 		return converter.convertTeacherEntityToDTO(temail);
 	}
-
+	
+    //To show teacher details by their first name
 	@Override
 	public List<TeacherDTO> findByFirstName(String name) {
 		List<Teacher> teachers =teacherRepository.findByFirstName(name);
@@ -118,3 +139,7 @@ public class TeacherServiceImpl implements TeacherService{
 	}
 
 }
+
+	
+
+

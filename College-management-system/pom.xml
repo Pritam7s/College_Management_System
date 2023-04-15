@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.0.4</version>
+		<version>2.7.10</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>edu.cms</groupId>
 	<artifactId>College-management-system</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>College-management-system</name>
-	<description>College management system spring boot project</description>
+	<description>College Management System Spring Boot Project</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -41,11 +41,20 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-    <groupId>org.projectlombok</groupId>
-    <artifactId>lombok</artifactId>
-    <scope>provided</scope>
-</dependency>
-		
+    		<groupId>org.projectlombok</groupId>
+   			<artifactId>lombok</artifactId>
+    		<scope>provided</scope>
+		</dependency>
+		<dependency>
+    		<groupId>io.jsonwebtoken</groupId>
+    		<artifactId>jjwt</artifactId>
+    		<version>0.6.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
